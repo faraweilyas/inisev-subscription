@@ -23,6 +23,7 @@ composer install
 composer update
 php -r "copy('.env.dev', '.env');"
 php artisan migrate
+php artisan db:seed
 php artisan serve
 ```
 

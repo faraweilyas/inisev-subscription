@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Post;
+use App\Events\PostCreated;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,6 +35,7 @@ class PostsController extends Controller
         $post = Post::create($fields);
 
         // Event dispatcher to send mail notification
+        // PostCreated::dispatch($post, $post->active_website_subscribers);
         // $post->active_website_subscribers;
 
         return response()->json([

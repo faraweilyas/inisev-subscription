@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\PostCreated;
 use App\Events\UserSubscribed;
+use App\Listeners\NotifySubscribers;
 use App\Listeners\SendThankYouEmail;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         UserSubscribed::class => [
             SendThankYouEmail::class,
+        ],
+        PostCreated::class => [
+            NotifySubscribers::class,
         ],
     ];
 

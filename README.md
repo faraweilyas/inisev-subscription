@@ -6,8 +6,6 @@ Create a simple subscription platform(only RESTful APIs with MySQL) in which use
 
 Here is the link to the [API Documentation](https://documenter.getpostman.com/view/4638046/VUqpsHVX).
 
-After importing collection endeavor to change the variable host value in the collection settings
-
 ## Set Up Instructions
 
 - Create DB called `inisev-subscription`
@@ -24,7 +22,7 @@ composer update
 php -r "copy('.env.dev', '.env');"
 php artisan migrate
 php artisan db:seed
-php artisan serve
+php -S localhost:9830 -t public/
 ```
 
 # Second Shell 

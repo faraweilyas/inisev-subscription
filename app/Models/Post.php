@@ -33,9 +33,6 @@ class Post extends Model
 
     public function website_subscribers()
     {
-        // if (empty($this->website))
-        //     return null;
-
         return $this
             ->website
             ->subscribers();
@@ -43,9 +40,6 @@ class Post extends Model
 
     public function active_website_subscribers()
     {
-        // if (empty($this->website_subscribers()))
-        //     return null;
-
         return $this
             ->website_subscribers()
             ->where('subscribed_at', '!=', null)

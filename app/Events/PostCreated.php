@@ -23,10 +23,10 @@ class PostCreated
      *
      * @return void
      */
-    public function __construct(Post $post, $subscribers)
+    public function __construct(Post $post)
     {
         $this->post = $post;
-        $this->subscribers = $subscribers;
+        $this->subscribers = $post->active_website_subscribers;
     }
 
     /**

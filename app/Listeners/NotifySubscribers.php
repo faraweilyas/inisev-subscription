@@ -3,8 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\PostCreated;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Notifications\Subscriber;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Notification;
 
 class NotifySubscribers
 {
